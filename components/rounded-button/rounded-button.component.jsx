@@ -6,7 +6,7 @@ const Focus = () => {
     return(
         <View>
             <View>
-                <Text></Text>
+                <Text>Testeeeee</Text>
     
             </View>
         </View>
