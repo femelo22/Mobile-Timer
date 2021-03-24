@@ -3,12 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Focus from './features/focus/Focus';
 import Hooks from './features/hooks/Hooks';
+import Somando from './features/test/Somando'
 
 
 export default function App() {
   return (
    <View style={styles.container}>
-     <Hooks /> 
+     <Somando /> 
    </View>
   );
 }
@@ -16,7 +17,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

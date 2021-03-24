@@ -4,6 +4,7 @@ import {
     Text,
     StyleSheet,
 } from 'react-native';
+
 import CustomButton from '../../components/custom-button/custom-button.component';
 
 const styles = StyleSheet.create({

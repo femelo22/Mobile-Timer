@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity} from "react-native";
 const RoundedButton = ({
     style = {},
     textStyle = {},
-    size = 125,
+    size = 40,
     ...otherProps
 }) => {
 
@@ -24,11 +24,11 @@ const styles = (size)  => StyleSheet.create({
         height: size,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: 'white',
+        borderColor: 'blue',
         borderWidth: 2,
     },
     textStyle: {
-        color: 'white',
+        color: 'blue',
         fontSize: size / 3,
     }
 })
