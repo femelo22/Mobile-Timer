@@ -1,30 +1,36 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity} from "react-native";
 
-const styles = StyleSheet.create({
+const RoundedButton = ({
+    style = {},
+    textStyle = {},
+    size = 125,
+    ...otherProps
+}) => {
+
+    return(
+        <TouchableOpacity style={[styles(size). radius, style]}>
+            <Text style={[styles(size).textStyle, textStyle]}>
+                { otherProps.title}
+            </Text>
+        </TouchableOpacity>
+    )
+}
+
+const styles = (size)  => StyleSheet.create({
     radius:{
-        borderRadius: 50,
-        width: 50,
-        height:50,
+        borderRadius: size/2,
+        width: size,
+        height: size,
         alignItems: 'center',
         justifyContent: 'center',
         borderColor: 'white',
-        backgroundColor: '#7289DA',
         borderWidth: 2,
     },
     textStyle: {
         color: 'white',
-        fontSize: 24
+        fontSize: size / 3,
     }
 })
-
-const RoundedButton = ({ title }) => {
-    
-    return(
-        <TouchableOpacity style={styles.radius}>
-            <Text style={styles.textStyle}> {title} </Text>
-        </TouchableOpacity>
-    )
-}
 
 export default RoundedButton;
