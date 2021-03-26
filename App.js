@@ -11,14 +11,24 @@ export default function App() {
 
   const [focusSubject, setFocusSubject] = useState(null);
 
+  const [total, setTotal] = useState(null);
+
   return (
-   <View style={styles.container}>
-     {
-       focusSubject ?<Text style={styles.text}> Meu foco agora é! </Text> :(
-        <Focus addSubject={setFocusSubject}/>
-       )
-     } { focusSubject }
-   </View>
+  // <View style={styles.container}>
+  //    {
+  //      focusSubject ?<Text style={styles.text}> Meu foco agora é! </Text> :(
+  //       <Focus addSubject={setFocusSubject}/>
+  //      )
+  //    } { focusSubject }
+  //  </View>
+
+  <View style={styles.container}>
+      {
+        total ? <Text> Total é:</Text> : (
+          <Somando addSubject={setTotal} />
+        )
+      } { total }
+  </View>
   );
 }
 

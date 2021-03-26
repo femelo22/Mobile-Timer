@@ -18,24 +18,32 @@ const styles = StyleSheet.create({
 
 
 const Somador = () => {
-    let [primeiroNumero, setPrimeiroNumero] = useState(0);
-    let [segundoNumero, setSegundoNumero] = useState(0);
+    let [primeiroNumero, setPrimeiroNumero] = useState(null);
+    let [segundoNumero, setSegundoNumero] = useState(null);
     let [total, setTotal] = useState();
 
 
     const handleSomar = (primeiroNumero, segundoNumero) => {
-        return primeiroNumero + segundoNumero;
+
+        total = (primeiroNumero + segundoNumero);
+
+        return total;
     }
 
 
     return (
         <View>
             <TextInput
-                defaultValue={primeiroNumero}
+                style={styles.inputText}
+                onSubmitEditing={({ nativeEvent }) => {
+                    setPrimeiroNumero(nativeEvent.text);
+                  }}
             />
             <TextInput
-                style={styles.inputText}
-                defaultValue={segundoNumero}
+            style={styles.inputText}
+                onSubmitEditing={({ nativeEvent }) => {
+                    setSegundoNumero(nativeEvent.text);
+                  }}
             />
             <View style={styles.viewButton}>
                 <Button
