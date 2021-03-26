@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Focus from './features/focus/Focus';
 import Hooks from './features/hooks/Hooks';
@@ -8,10 +8,16 @@ import Fetch from './features/test/Fetch';
 
 
 export default function App() {
+
+  const [focusSubject, setFocusSubject] = useState(null);
+
   return (
    <View style={styles.container}>
-     {/* <Somando />  */}
-     <Fetch />
+     {
+       focusSubject ?<Text style={styles.text}> Meu foco agora é! </Text> :(
+        <Focus addSubject={setFocusSubject}/>
+       )
+     } { focusSubject }
    </View>
   );
 }
@@ -23,4 +29,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text: {
+    fontFamily: 'Consolas',
+    fontSize: '15px',
+    marginBottom: '10px',
+    color: 'red'
+  }
 });

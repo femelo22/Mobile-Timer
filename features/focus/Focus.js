@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     StyleSheet,
     View,
@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
   title: {
     color: 'black',
     fontWeight: 700,
-    fontSize: 24
+    fontSize: 20,
+    fontFamily: 'Consolas'
+
   },
   inputContainer: {
     paddingTop: 20,
@@ -32,22 +34,37 @@ const styles = StyleSheet.create({
 
 
 
-const Focus = () => {
+const Focus = ({ addSubject }) => {
+
+
+  const [tempItem, setTempItem] = useState(null);
+
+  const handleOnPress = () =>{
+    console.log('entrou no handle FOCUS')
+    addSubject(tempItem);
+  }
 
     return(
         <View style={styles.container}>
           <View style={styles.titleContainer}>
             <Text style={styles.title}>Não posso procastinar em: </Text>
               <View style={styles.inputContainer}>
-                <TextInput style={{flex: 1, marginRight: 10}} />
+                <TextInput 
+                  style={{flex: 1, marginRight: 10}}              
+                  onSubmitEditing={({ nativeEvent }) => {
+                    setTempItem(nativeEvent.text);
+                  }}
+                 />
                 <RoundedButton
                 title="+"
                 size={50}
+                position="center"
+                textColor='blue'
                 style={{backgroundColor: '#bfc4dc'}}
                 textStyle={{color: 'black'}}
+                onPress={handleOnPress}
                 />
-                <RoundedButton title="Oi" size={80} />
-                <RoundedButton title="2" style={{backgroundColor: 'black'}} />
+               
               </View>
           </View>
         </View>

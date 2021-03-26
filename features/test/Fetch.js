@@ -8,8 +8,8 @@ const Fetch = () => {
     
     useEffect(() =>{
         fetch('http://cfbcursos.com.br/filmes.json')
-            .then( resp => resp.json())
-            .then( json =>setDados(json.filmes))
+            .then(res => res.json())
+            .then(json => setDados(json.filmes))
             .catch(()=>(alert('Erro ao carregar lista de filmes')))
             .finally(()=>setCarregando(false))
     }, [])
