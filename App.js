@@ -1,48 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Focus from './features/focus/Focus';
-import Hooks from './features/hooks/Hooks';
-import Somando from './features/test/Somando'
-import Fetch from './features/test/Fetch';
+import Timer from './features/timer/Timer';
+import { colorsDefault, colorsLightOrange } from './utils/colors';
 
 
 export default function App() {
 
   const [focusSubject, setFocusSubject] = useState(null);
-
-  const [total, setTotal] = useState(null);
-
   return (
-  // <View style={styles.container}>
-  //    {
-  //      focusSubject ?<Text style={styles.text}> Meu foco agora é! </Text> :(
-  //       <Focus addSubject={setFocusSubject}/>
-  //      )
-  //    } { focusSubject }
-  //  </View>
-
-  <View style={styles.container}>
+    <View style={styles.container}>
       {
-        total ? <Text> Total é:</Text> : (
-          <Somando addSubject={setTotal} />
-        )
-      } { total }
-  </View>
+        focusSubject ?
+         <Timer focusSubject={focusSubject} /> : 
+          (
+            <Focus addSubject={setFocusSubject} />
+          )
+      } { focusSubject}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontFamily: 'Consolas',
-    fontSize: '15px',
-    marginBottom: '10px',
-    color: 'red'
+    backgroundColor: colorsLightOrange.orangeMiddle,
   }
 });
