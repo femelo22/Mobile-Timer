@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Focus from './features/focus/Focus';
 import Timer from './features/timer/Timer';
-import { colorsDefault, colorsLightOrange } from './utils/colors';
+import { light, orangePalette } from './utils/colors';
 
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
           (
             <Focus addSubject={setFocusSubject} />
           )
-      } { focusSubject}
+      }
     </View>
   );
 }
@@ -24,6 +24,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colorsLightOrange.orangeMiddle,
+    backgroundColor: orangePalette.orangeMiddle,
   }
 });

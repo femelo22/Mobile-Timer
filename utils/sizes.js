@@ -1,12 +1,17 @@
 export const spacing = Object.freeze({
     sm: 8,
     md: 16,
-    xxxl: 40
+    lg: 24,
+    xl: 32,
+    xxl: 40,
+    xxxl: 80
 });
 
 export const fontSize = Object.freeze({
     sm: 8,
     md: 16,
-    xl: 30,
-    xxxl: 40,
+    lg: 24,
+    xl: 32,
+    xxl: 40,
+    xxxl: 80
 });

@@ -4,23 +4,26 @@ import {
     Text,
     StyleSheet
 } from 'react-native';
-import { colorsDefault } from '../../utils/colors'
+import { light, orangePalette } from '../../utils/colors'
 import { spacing, fontSize } from '../../utils/sizes'
 
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: orangePalette.orangeLight
     },
     title: {
-        color: colorsDefault.black,
+        color: light.black,
         textAlign: 'center',
         fontSize: fontSize.xl
     },
     task: {
-        color: colorsDefault.black,
+        color: light.black,
         fontWeight: 'bold',
         textAlign: 'center',
+        fontSize: fontSize.xl,
+        marginTop: 15
     }
 });
 
