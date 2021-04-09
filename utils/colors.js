@@ -21,6 +21,8 @@ export const dark = Object.freeze({
 export const orangePalette = Object.freeze({
     orangeLight: '#ffead5',
     orangeMiddle: '#ffdbb7',
+    orangeStrong: '#f9a609',
+    orange: '#ea8116'
 })
 
 
