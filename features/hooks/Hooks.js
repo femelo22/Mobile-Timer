@@ -1,43 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import {
+import React, {useEffect, useState} from 'react';
+import { 
     View,
     Text,
     StyleSheet,
-} from 'react-native';
+    } from 'react-native';
+import CustomButton from '../../components/custom-button/custom-button.component';    
 
-import CustomButton from '../../components/custom-button/custom-button.component';
-
-const styles = StyleSheet.create({
+    const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
         flex: 1,
-    }
-});
+        }
+      });
 
 const Hooks = () => {
 
     let [contador, setContador] = useState(10);
     let [outroContador, setOutroContador] = useState(100);
 
-    useEffect(() => {
-        console.log('useEffect');
-    }, []);
-
-    const handleCount = () => {
+    const handleCount  = () => {
         setContador(contador++)
-    }
+    };
 
-    const handleOutro = () =>{
+    const handleOutro  = () => {
         setOutroContador(outroContador--)
-    }
+    };
 
+    useEffect(() =>{
+        console.log('useEffect')
+    }, [outroContador])
+
+    
     return(
         <View style={styles.container}>
-            <Text>Valor a somar: {contador}</Text>
-            <CustomButton title='Somar' onPress={handleCount} />
-            <Text>Valor a diminuir: {outroContador}</Text>
-            <CustomButton title='Subtrair' onPress={handleOutro} />
+            <Text>Valor: {contador}</Text>
+            <CustomButton title='Contar' onPress=
+            {handleCount}/>
+            <Text>Outro: {outroContador}</Text>
+            <CustomButton title='Descontar' onPress=
+            {handleOutro}/>
         </View>
     )
 }

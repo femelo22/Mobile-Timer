@@ -1,32 +1,31 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize: '10px',
-        fontFamily: 'Open Sans',
-        fontWeight: 'bolder',
-    },
-    button: {
-        alignItems: 'center',
-        width: 'auto',
-        height: '50px',
-        padding: '10px',
-        backgroundColor: '#4285f4',
-      }
-})
+  text: {
+    fontsize:30,
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+  },  
+  button:{
+      alignItems: 'center',
+      width: 'auto',
+      height: '50px',
+      padding: 10,
+      backgroundColor: '#3b5998',
+      },
+}) 
 
-
-
-const CustomButton = ({ title, ...otherProps }) => {
-    
-    return (
-        <TouchableOpacity
-            style={styles.button}
-            { ...otherProps }
-        >
-            <Text style={{ color: 'white' }}> {title} </Text>
-        </TouchableOpacity>
+const CustomButton = ({ title, ...otherProps}) => {
+    return(
+      <TouchableOpacity 
+      style={styles.button}
+      {...otherProps}
+      >
+        <Text style={{color: 'white', fontSize:25, fontFamily :'Open Sans'}}> 
+        {title} 
+        </Text>
+      </TouchableOpacity>
     )
 }
 

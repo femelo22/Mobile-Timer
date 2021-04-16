@@ -1,29 +1,38 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import Focus from './features/focus/Focus';
 import Timer from './features/timer/Timer';
-import { light, orangePalette } from './utils/colors';
+import {colors} from './utils/colors';
 
+import { 
+  StyleSheet, 
+  View,
+  Text,
+} from 'react-native';
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.darkMode,
+    flex: 1,
+  }
+});
 
 export default function App() {
 
   const [focusSubject, setFocusSubject] = useState(null);
-  return (
+
+  return (  
     <View style={styles.container}>
       {
-        focusSubject ?
-         <Timer focusSubject={focusSubject} /> : 
-          (
-            <Focus addSubject={setFocusSubject} />
-          )
-      }
-    </View>
-  );
+        focusSubject ? (
+          <Timer focusSubject={focusSubject}/>
+        )
+        : (
+          <Focus 
+            addSubject={setFocusSubject}
+          />
+        ) 
+      }  
+    </View>  
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: orangePalette.orangeMiddle,
-  }
-});
